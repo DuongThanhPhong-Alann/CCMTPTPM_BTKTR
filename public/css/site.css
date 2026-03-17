@@ -258,22 +258,77 @@ body {
   background: rgba(255, 255, 255, 0.85);
 }
 
-.card {
-  margin: 24px 0;
-  padding: 16px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+.welcome {
+  margin: 16px 0 24px;
+  padding: 18px 22px 14px;
+  background: #ffffff;
 }
 
-.h1 {
-  margin: 0 0 8px;
-  font-size: 22px;
+.welcome__title {
+  margin: 0 0 14px;
+  color: #2d2d2d;
+  font-size: 19px;
+  font-weight: 400;
 }
 
-.muted {
-  margin: 0;
-  color: var(--muted);
+.welcome__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.feature-card__icon {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  object-fit: contain;
+}
+
+.feature-card__body {
+  flex: 1;
+}
+
+.feature-card__title {
+  margin: 2px 0 6px;
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.feature-card__text {
+  margin: 0 0 14px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.feature-card__text a {
+  color: #7dbb00;
+  text-decoration: none;
+}
+
+.feature-card__text a:hover {
+  text-decoration: underline;
+}
+
+.feature-card__button {
+  display: inline-flex;
+  min-width: 88px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  background: url("/Images/tooplate_button.png") no-repeat center / 100% 100%;
+  color: #272727;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 code {
@@ -305,6 +360,10 @@ code {
   .main-nav__search {
     justify-content: flex-end;
     margin-right: 0;
+  }
+
+  .welcome__grid {
+    gap: 22px;
   }
 }
 
@@ -338,5 +397,14 @@ code {
 
   .slider__viewport {
     height: 240px;
+  }
+
+  .welcome {
+    padding: 18px 16px 14px;
+  }
+
+  .welcome__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

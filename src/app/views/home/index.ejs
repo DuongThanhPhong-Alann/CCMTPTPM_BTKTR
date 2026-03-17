@@ -14,10 +14,10 @@
       <% }) %>
 
       <button class="slider__btn slider__btn--prev" type="button" data-slider-prev aria-label="Previous slide">
-        ‹
+        &#8249;
       </button>
       <button class="slider__btn slider__btn--next" type="button" data-slider-next aria-label="Next slide">
-        ›
+        &#8250;
       </button>
 
       <div class="slider__caption">
@@ -27,10 +27,36 @@
     </div>
   </section>
 
-  <div class="card">
-    <h1 class="h1">Trang chủ</h1>
-    <p class="muted">Header đang dùng ảnh trong <code>public/Images</code>.</p>
-  </div>
+  <section class="welcome">
+    <h1 class="welcome__title">Welcome to Green Age</h1>
+
+    <div class="welcome__grid">
+      <article class="feature-card">
+        <img class="feature-card__icon" src="/Images/icon1.png" alt="" />
+        <div class="feature-card__body">
+          <h2 class="feature-card__title">Download Free Templates</h2>
+          <p class="feature-card__text">
+            Green Age is a free <a href="#">website template</a> for everyone.
+            You may edit and apply this template for any purpose.
+          </p>
+          <a class="feature-card__button" href="#">More</a>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <img class="feature-card__icon" src="/Images/icon3.png" alt="" />
+        <div class="feature-card__body">
+          <h2 class="feature-card__title">Online Marketing</h2>
+          <p class="feature-card__text">
+            Sed et eros ac mauris suscipit viverra. Sed et eros ac mauris
+            suscipit viverra. Validate <a href="#">XHTML</a> and
+            <a href="#">CSS</a>.
+          </p>
+          <a class="feature-card__button" href="#">More</a>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
 
 <script src="/js/slider.js" defer></script>
