@@ -24,8 +24,8 @@ body {
 }
 
 .topbar {
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid var(--border);
+  padding-top: 8px;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .sr-only {
@@ -43,7 +43,7 @@ body {
 .brand {
   display: inline-flex;
   align-items: center;
-  padding: 14px 0;
+  padding: 16px 0 18px;
   text-decoration: none;
 }
 
@@ -53,83 +53,124 @@ body {
   width: auto;
 }
 
-.nav {
-  background: #233c12 url("/Images/tooplate_menu.png") repeat-x;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+.main-nav {
+  background: #1d1d1f url("/Images/tooplate_menu.png") repeat-x top;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 4px solid #5cad00;
 }
 
-.nav__inner {
+.main-nav__inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 40px;
+  gap: 20px;
+  min-height: 62px;
 }
 
-.nav__list {
-  list-style: none;
-  padding: 0;
+.main-nav__list {
+  display: flex;
+  align-items: stretch;
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  position: relative;
+}
+
+.main-nav__item::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 2px;
+  height: 44px;
+  background: url("/Images/tooplate_menu_divider.png") no-repeat center;
+  opacity: 0.95;
+}
+
+.main-nav__item:last-child::after {
+  display: none;
+}
+
+.main-nav__link {
+  position: relative;
+  display: flex;
+  min-width: 120px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  color: #63b300;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav__link::after {
+  content: "\2191";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  font-size: 13px;
+  line-height: 1;
+  color: currentColor;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus-visible,
+.main-nav__link.is-active {
+  color: #ffffff;
+  background: url("/Images/tooplate_menu_hover.png") repeat-x top;
+}
+
+.main-nav__link.is-active::after {
+  content: "\2193";
+}
+
+.main-nav__search {
   display: flex;
   align-items: center;
-  gap: 6px;
+  align-self: center;
+  margin-right: 2px;
 }
 
-.nav__link {
-  display: inline-flex;
-  align-items: center;
-  height: 40px;
-  padding: 0 14px;
-  color: #e6f5d8;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.2px;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.nav__link:hover,
-.nav__link:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+.main-nav__search-input {
+  width: 172px;
+  height: 32px;
+  padding: 6px 10px;
+  border: 1px solid #222;
   outline: none;
+  background: #555;
+  color: #fff;
+  font-size: 14px;
 }
 
-.nav__link--active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+.main-nav__search-input::placeholder {
+  color: #e5e7eb;
 }
 
-.nav__search {
+.main-nav__search-button {
   display: inline-flex;
+  width: 33px;
+  height: 32px;
   align-items: center;
-  gap: 6px;
-}
-
-.nav__searchInput {
-  height: 26px;
-  width: 160px;
-  padding: 0 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-}
-
-.nav__searchInput::placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.nav__searchBtn {
-  width: 28px;
-  height: 26px;
+  justify-content: center;
+  padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12) url("/Images/tooplate_search.png")
-    no-repeat center;
+  background: url("/Images/tooplate_search.png") no-repeat center / cover;
   cursor: pointer;
 }
 
-.nav__searchBtn:hover {
-  background-color: rgba(255, 255, 255, 0.18);
+.main-nav__search-arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #fff;
 }
 
 .slider {
@@ -239,4 +280,63 @@ code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     Liberation Mono, monospace;
   font-size: 0.95em;
+}
+
+@media (max-width: 900px) {
+  .main-nav__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 0 14px;
+  }
+
+  .main-nav__list {
+    flex-wrap: wrap;
+  }
+
+  .main-nav__item::after {
+    display: none;
+  }
+
+  .main-nav__link {
+    min-width: 96px;
+    min-height: 48px;
+  }
+
+  .main-nav__search {
+    justify-content: flex-end;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(var(--container-width), 100% - 20px);
+  }
+
+  .brand {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-nav__list {
+    justify-content: center;
+  }
+
+  .main-nav__link {
+    min-width: 84px;
+    padding: 0 16px;
+    font-size: 15px;
+  }
+
+  .main-nav__search {
+    justify-content: center;
+  }
+
+  .main-nav__search-input {
+    width: min(100%, 220px);
+  }
+
+  .slider__viewport {
+    height: 240px;
+  }
 }

@@ -8,6 +8,40 @@
       />
     </a>
   </div>
-</header>
+  <nav class="main-nav" aria-label="Menu chinh">
+    <div class="container main-nav__inner">
+      <ul class="main-nav__list">
+        <li class="main-nav__item">
+          <a class="main-nav__link is-active" href="/">Home</a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="/gallery">Gallery</a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="/news">News</a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="/blog">Blog</a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="/contact">Contact</a>
+        </li>
+      </ul>
 
-<%- include("./nav") %>
+      <form class="main-nav__search" action="/search" method="get" role="search">
+        <label class="sr-only" for="q">Search</label>
+        <input
+          id="q"
+          class="main-nav__search-input"
+          type="search"
+          name="q"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="main-nav__search-button" type="submit" aria-label="Search">
+          <span class="main-nav__search-arrow" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </nav>
+</header>
