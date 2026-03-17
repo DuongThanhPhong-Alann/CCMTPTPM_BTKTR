@@ -28,6 +28,18 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -39,6 +51,170 @@ body {
   display: block;
   height: 54px;
   width: auto;
+}
+
+.nav {
+  background: #233c12 url("/Images/tooplate_menu.png") repeat-x;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 40px;
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  color: #e6f5d8;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.nav__link--active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav__search {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__searchInput {
+  height: 26px;
+  width: 160px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.nav__searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav__searchBtn {
+  width: 28px;
+  height: 26px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12) url("/Images/tooplate_search.png")
+    no-repeat center;
+  cursor: pointer;
+}
+
+.nav__searchBtn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.slider {
+  margin: 18px 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.slider__viewport {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #0b0f07;
+}
+
+.slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 380ms ease;
+}
+
+.slider__img.is-active {
+  opacity: 1;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 44px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+.slider__btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.slider__btn--prev {
+  left: 10px;
+}
+
+.slider__btn--next {
+  right: 10px;
+}
+
+.slider__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+}
+
+.slider__dots {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  gap: 6px;
+}
+
+.slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.slider__dot.is-active {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .card {
@@ -64,4 +240,3 @@ code {
     Liberation Mono, monospace;
   font-size: 0.95em;
 }
-
