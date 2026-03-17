@@ -40,6 +40,23 @@ function index(req, res) {
   res.render("home/index", {
     title: "GreenAge",
     slides: loadSlides(),
+    projects: [
+      {
+        title: "ullam ut neque neque",
+        imageSrc: "/Images/tooplate_image_01.jpg",
+        text: "Etiam ut nibh et urna cursus ultrices nec vel nunc. In hac habitasse platea dictumst.",
+      },
+      {
+        title: "Sed aliquam mauris",
+        imageSrc: "/Images/tooplate_image_02.jpg",
+        text: "Donec ullamcorper feugiat nunc ut tempus. Sed sodales, nibh ut ultrices pulvinar.",
+      },
+      {
+        title: "Aliquam aliquet sem",
+        imageSrc: "/Images/tooplate_image_03.jpg",
+        text: "Praesent auctor quam quis libero venenatis dapibus. Donec ullamcorper feugiat nunc.",
+      },
+    ],
   });
 }
 
