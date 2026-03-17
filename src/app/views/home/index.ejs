@@ -1,0 +1,154 @@
+<%- include("../partials/pageStart", { title }) %>
+<%- include("../partials/header") %>
+
+<main class="container">
+  <section class="slider" data-slider aria-label="Slideshow">
+    <div class="slider__viewport">
+      <% (slides ?? []).forEach(function (slide, i) { %>
+        <img
+          class="slider__img <%= i === 0 ? "is-active" : "" %>"
+          src="<%= slide.src %>"
+          alt="<%= slide.alt %>"
+          loading="<%= i === 0 ? "eager" : "lazy" %>"
+        />
+      <% }) %>
+
+      <button class="slider__btn slider__btn--prev" type="button" data-slider-prev aria-label="Previous slide">
+        ‹
+      </button>
+      <button class="slider__btn slider__btn--next" type="button" data-slider-next aria-label="Next slide">
+        ›
+      </button>
+
+      <div class="slider__caption">
+        Suspendisse quis velit at nisi ultrices tristique a eu velit.
+      </div>
+      <div class="slider__dots" data-slider-dots aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="welcome" aria-labelledby="welcome-title">
+    <h2 id="welcome-title" class="section-title">Welcome to Green Age</h2>
+
+    <div class="feature-grid feature-grid--3">
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon1.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Download Free Templates</h3>
+          <p class="feature__text">
+            Green Age is a free website template for everyone. You may edit and apply
+            this template for any purpose.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon2.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Online Marketing</h3>
+          <p class="feature__text">
+            Sed et eros ac mauris suscipit viverra. Sed et eros ac mauris suscipit
+            viverra. Validate XHTML and CSS.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon3.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Customer Support</h3>
+          <p class="feature__text">
+            Cras scelerisque ligula id mi suscipit, sed lacinia ipsum fermentum.
+            Morbi et tempor enim.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+    </div>
+
+    <div class="feature-grid feature-grid--2">
+      <article class="feature feature--compact">
+        <img class="feature__icon" src="/Images/icon4.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Aenean Quis Nulla ac Nisi Rutrum</h3>
+          <p class="feature__text">
+            Cras scelerisque ligula id mi suscipit, sed lacinia ipsum fermentum.
+            Morbi et tempor enim.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+
+      <article class="feature feature--compact">
+        <img class="feature__icon" src="/Images/icon2.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Praesent Dui Nibh Eleifend Lobortis</h3>
+          <p class="feature__text">
+            Praesent fringilla mattis, cursus eros. Credit goes to Unsplash for
+            photos and homepage slider.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-title">Latest Projects</h2>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <h3 class="project-card__title">Nullam ut neque neque</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_01.jpg"
+            alt="Project 1"
+          />
+        </a>
+        <p class="project-card__text">
+          Etiam ut nibh et urna cursus ultricies nec vel nunc. In hac
+          habitasse platea dictumst.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card__title">Sed aliquam mauris</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_02.jpg"
+            alt="Project 2"
+          />
+        </a>
+        <p class="project-card__text">
+          Donec ullamcorper feugiat nunc ut tempus. Sed sodales, nibh ut
+          ultricies pulvinar.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card__title">Aliquam aliquet sem</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_03.jpg"
+            alt="Project 3"
+          />
+        </a>
+        <p class="project-card__text">
+          Praesent auctor quam quis libero venenatis dapibus. Donec
+          ullamcorper feugiat nunc ut tempus.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<script src="/js/slider.js" defer></script>
+<%- include("../partials/pageEnd") %>
