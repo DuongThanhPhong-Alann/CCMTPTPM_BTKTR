@@ -258,77 +258,166 @@ body {
   background: rgba(255, 255, 255, 0.85);
 }
 
+.section-title {
+  margin: 0;
+  padding: 12px 0 10px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+}
+
 .welcome {
-  margin: 16px 0 24px;
-  padding: 18px 22px 14px;
+  margin: 6px 0 18px;
   background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 0;
+  padding: 0 14px 14px;
 }
 
-.welcome__title {
-  margin: 0 0 14px;
-  color: #2d2d2d;
-  font-size: 19px;
-  font-weight: 400;
-}
-
-.welcome__grid {
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 34px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.feature-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
+.feature-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.feature-card__icon {
-  width: 50px;
-  height: 50px;
-  flex: 0 0 50px;
+.feature-grid--2 {
+  margin-top: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 14px 12px;
+  background: url("/Images/tooplate_fp_box.jpg") repeat-x top;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.feature--compact {
+  grid-template-columns: 64px 1fr auto;
+}
+
+.feature__icon {
+  width: 56px;
+  height: 56px;
   object-fit: contain;
+  margin-top: 2px;
 }
 
-.feature-card__body {
-  flex: 1;
-}
-
-.feature-card__title {
-  margin: 2px 0 6px;
-  color: #4b4b4b;
+.feature__title {
+  margin: 0 0 6px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
+  color: #0f172a;
 }
 
-.feature-card__text {
-  margin: 0 0 14px;
-  color: #777;
+.feature__text {
+  margin: 0;
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.45;
+  color: #374151;
 }
 
-.feature-card__text a {
-  color: #7dbb00;
-  text-decoration: none;
-}
-
-.feature-card__text a:hover {
-  text-decoration: underline;
-}
-
-.feature-card__button {
+.more-btn {
+  align-self: end;
+  justify-self: end;
   display: inline-flex;
-  min-width: 88px;
-  height: 22px;
+  width: 78px;
+  height: 24px;
   align-items: center;
   justify-content: center;
-  padding: 0 18px;
-  background: url("/Images/tooplate_button.png") no-repeat center / 100% 100%;
-  color: #272727;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   text-decoration: none;
+  color: #1f2937;
+  background: url("/Images/tooplate_button.png") no-repeat center / contain;
+}
+
+.more-btn:hover,
+.more-btn:focus-visible {
+  color: #111827;
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.projects {
+  margin: 0 0 28px;
+  padding: 0 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 2px 0 18px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-card__title {
+  margin: 0 0 6px;
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-card__image-link {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: 105px;
+  object-fit: cover;
+}
+
+.project-card__text {
+  margin: 0 0 8px;
+  color: #7a7a7a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.project-card__button {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.card {
+  margin: 24px 0;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
 }
 
 code {
@@ -360,10 +449,6 @@ code {
   .main-nav__search {
     justify-content: flex-end;
     margin-right: 0;
-  }
-
-  .welcome__grid {
-    gap: 22px;
   }
 }
 
@@ -399,12 +484,35 @@ code {
     height: 240px;
   }
 
-  .welcome {
-    padding: 18px 16px 14px;
+  .section-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 860px) {
+  .feature-grid--3 {
+    grid-template-columns: 1fr;
   }
 
-  .welcome__grid {
+  .feature-grid--2 {
     grid-template-columns: 1fr;
-    gap: 20px;
+  }
+
+  .feature {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .more-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-left: 76px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__button {
+    align-self: flex-start;
   }
 }

@@ -14,10 +14,10 @@
       <% }) %>
 
       <button class="slider__btn slider__btn--prev" type="button" data-slider-prev aria-label="Previous slide">
-        &#8249;
+        ‹
       </button>
       <button class="slider__btn slider__btn--next" type="button" data-slider-next aria-label="Next slide">
-        &#8250;
+        ›
       </button>
 
       <div class="slider__caption">
@@ -27,33 +27,124 @@
     </div>
   </section>
 
-  <section class="welcome">
-    <h1 class="welcome__title">Welcome to Green Age</h1>
+  <section class="welcome" aria-labelledby="welcome-title">
+    <h2 id="welcome-title" class="section-title">Welcome to Green Age</h2>
 
-    <div class="welcome__grid">
-      <article class="feature-card">
-        <img class="feature-card__icon" src="/Images/icon1.png" alt="" />
-        <div class="feature-card__body">
-          <h2 class="feature-card__title">Download Free Templates</h2>
-          <p class="feature-card__text">
-            Green Age is a free <a href="#">website template</a> for everyone.
-            You may edit and apply this template for any purpose.
+    <div class="feature-grid feature-grid--3">
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon1.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Download Free Templates</h3>
+          <p class="feature__text">
+            Green Age is a free website template for everyone. You may edit and apply
+            this template for any purpose.
           </p>
-          <a class="feature-card__button" href="#">More</a>
         </div>
+        <a class="more-btn" href="#">More</a>
       </article>
 
-      <article class="feature-card">
-        <img class="feature-card__icon" src="/Images/icon3.png" alt="" />
-        <div class="feature-card__body">
-          <h2 class="feature-card__title">Online Marketing</h2>
-          <p class="feature-card__text">
-            Sed et eros ac mauris suscipit viverra. Sed et eros ac mauris
-            suscipit viverra. Validate <a href="#">XHTML</a> and
-            <a href="#">CSS</a>.
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon2.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Online Marketing</h3>
+          <p class="feature__text">
+            Sed et eros ac mauris suscipit viverra. Sed et eros ac mauris suscipit
+            viverra. Validate XHTML and CSS.
           </p>
-          <a class="feature-card__button" href="#">More</a>
         </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+
+      <article class="feature">
+        <img class="feature__icon" src="/Images/icon3.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Customer Support</h3>
+          <p class="feature__text">
+            Cras scelerisque ligula id mi suscipit, sed lacinia ipsum fermentum.
+            Morbi et tempor enim.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+    </div>
+
+    <div class="feature-grid feature-grid--2">
+      <article class="feature feature--compact">
+        <img class="feature__icon" src="/Images/icon4.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Aenean Quis Nulla ac Nisi Rutrum</h3>
+          <p class="feature__text">
+            Cras scelerisque ligula id mi suscipit, sed lacinia ipsum fermentum.
+            Morbi et tempor enim.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+
+      <article class="feature feature--compact">
+        <img class="feature__icon" src="/Images/icon2.png" alt="" aria-hidden="true" />
+        <div class="feature__body">
+          <h3 class="feature__title">Praesent Dui Nibh Eleifend Lobortis</h3>
+          <p class="feature__text">
+            Praesent fringilla mattis, cursus eros. Credit goes to Unsplash for
+            photos and homepage slider.
+          </p>
+        </div>
+        <a class="more-btn" href="#">More</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-title">Latest Projects</h2>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <h3 class="project-card__title">Nullam ut neque neque</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_01.jpg"
+            alt="Project 1"
+          />
+        </a>
+        <p class="project-card__text">
+          Etiam ut nibh et urna cursus ultricies nec vel nunc. In hac
+          habitasse platea dictumst.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card__title">Sed aliquam mauris</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_02.jpg"
+            alt="Project 2"
+          />
+        </a>
+        <p class="project-card__text">
+          Donec ullamcorper feugiat nunc ut tempus. Sed sodales, nibh ut
+          ultricies pulvinar.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card__title">Aliquam aliquet sem</h3>
+        <a class="project-card__image-link" href="#">
+          <img
+            class="project-card__image"
+            src="/Images/tooplate_image_03.jpg"
+            alt="Project 3"
+          />
+        </a>
+        <p class="project-card__text">
+          Praesent auctor quam quis libero venenatis dapibus. Donec
+          ullamcorper feugiat nunc ut tempus.
+        </p>
+        <a class="more-btn project-card__button" href="#">More</a>
       </article>
     </div>
   </section>
