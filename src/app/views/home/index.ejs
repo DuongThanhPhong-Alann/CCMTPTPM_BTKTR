@@ -2,11 +2,36 @@
 <%- include("../partials/header") %>
 
 <main class="container">
+  <section class="slider" data-slider aria-label="Slideshow">
+    <div class="slider__viewport">
+      <% (slides ?? []).forEach(function (slide, i) { %>
+        <img
+          class="slider__img <%= i === 0 ? "is-active" : "" %>"
+          src="<%= slide.src %>"
+          alt="<%= slide.alt %>"
+          loading="<%= i === 0 ? "eager" : "lazy" %>"
+        />
+      <% }) %>
+
+      <button class="slider__btn slider__btn--prev" type="button" data-slider-prev aria-label="Previous slide">
+        ‹
+      </button>
+      <button class="slider__btn slider__btn--next" type="button" data-slider-next aria-label="Next slide">
+        ›
+      </button>
+
+      <div class="slider__caption">
+        Suspendisse quis velit at nisi ultrices tristique a eu velit.
+      </div>
+      <div class="slider__dots" data-slider-dots aria-hidden="true"></div>
+    </div>
+  </section>
+
   <div class="card">
     <h1 class="h1">Trang chủ</h1>
     <p class="muted">Header đang dùng ảnh trong <code>public/Images</code>.</p>
   </div>
 </main>
 
+<script src="/js/slider.js" defer></script>
 <%- include("../partials/pageEnd") %>
-
