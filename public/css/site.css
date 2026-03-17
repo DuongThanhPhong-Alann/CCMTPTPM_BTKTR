@@ -258,6 +258,103 @@ body {
   background: rgba(255, 255, 255, 0.85);
 }
 
+.section-title {
+  margin: 0;
+  padding: 12px 0 10px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.welcome {
+  margin: 6px 0 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 0;
+  padding: 0 14px 14px;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.feature-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-grid--2 {
+  margin-top: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 14px 12px;
+  background: url("/Images/tooplate_fp_box.jpg") repeat-x top;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.feature--compact {
+  grid-template-columns: 64px 1fr auto;
+}
+
+.feature__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-top: 2px;
+}
+
+.feature__title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.feature__text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #374151;
+}
+
+.more-btn {
+  align-self: end;
+  justify-self: end;
+  display: inline-flex;
+  width: 78px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1f2937;
+  background: url("/Images/tooplate_button.png") no-repeat center / contain;
+}
+
+.more-btn:hover,
+.more-btn:focus-visible {
+  color: #111827;
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.projects {
+  margin: 0 0 28px;
+  padding: 0 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 0;
+}
+
 .card {
   margin: 24px 0;
   padding: 16px;
@@ -338,5 +435,29 @@ code {
 
   .slider__viewport {
     height: 240px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 860px) {
+  .feature-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .more-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-left: 76px;
   }
 }
